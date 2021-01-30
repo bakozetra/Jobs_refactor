@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Header} from "./pages";
+import {Header, Home} from "./pages";
 
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
       <Switch>
         <Route>
        <Header/>
+       <Home/>
         </Route>
       </Switch>
     </Router>

@@ -34249,7 +34249,15 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"src/pages/search.js":[function(require,module,exports) {
+// import React from "react";
+// import { SearchContainer } from "../containers";
+// export default function Search() {
+//    return (
+//  <SearchContainer/>
+//    )
+// }
+},{}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
 /** @license React v17.0.1
  * react-is.development.js
  *
@@ -36483,7 +36491,7 @@ Search.Button = function SearchButton({
 }) {
   return /*#__PURE__*/_react.default.createElement(_search.Button, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/search":"src/component/search/styles/search.js"}],"src/component/Header/styles/header.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/search":"src/component/search/styles/search.js"}],"src/component/header/styles/header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36504,7 +36512,7 @@ const Image = _styledComponents.default.img`
 height: 20vh;
 `;
 exports.Image = Image;
-},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/Header/index.js":[function(require,module,exports) {
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/header/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36529,7 +36537,7 @@ Header.Image = function HeaderImage({ ...restProps
 }) {
   return /*#__PURE__*/_react.default.createElement(_header.Image, restProps);
 };
-},{"react":"node_modules/react/index.js","./styles/header":"src/component/Header/styles/header.js"}],"src/component/country/styles/country.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/header":"src/component/header/styles/header.js"}],"src/component/country/styles/country.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36546,7 +36554,6 @@ background-color : lightgray;
 width: 70%;
 margin-left: auto;
 margin-top: 4rem;
-
  `;
 exports.Container = Container;
 const Title = _styledComponents.default.h2``;
@@ -36555,7 +36562,6 @@ const Image = _styledComponents.default.img`
 width: 90px;
 height: 90px;
 margin-left: 1rem;
-
 `;
 exports.Image = Image;
 const Button = _styledComponents.default.button`
@@ -36565,7 +36571,6 @@ height: 26px;
 border: 1px solid rgba(51, 70, 128, 1);
 color: rgba(51, 70, 128, 1);
 border-radius : 5px;
-;
 
 `;
 exports.Button = Button;
@@ -36662,7 +36667,82 @@ Country.About = function CountryAbout({
 }) {
   return /*#__PURE__*/_react.default.createElement(_country.About, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/country":"src/component/country/styles/country.js"}],"src/component/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/country":"src/component/country/styles/country.js"}],"src/component/location/styles/location.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Chekcbox = exports.Radio = exports.Button = exports.Input = exports.Label = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Container = _styledComponents.default.div`
+ display : flex;
+ flex-direction : column;
+ position : absolute;
+ top: 14rem;
+ line-height : 2;
+`;
+exports.Container = Container;
+const Label = _styledComponents.default.label``;
+exports.Label = Label;
+const Input = _styledComponents.default.input``;
+exports.Input = Input;
+const Button = _styledComponents.default.button``;
+exports.Button = Button;
+const Radio = _styledComponents.default.select``;
+exports.Radio = Radio;
+const Chekcbox = _styledComponents.default.input``;
+exports.Chekcbox = Chekcbox;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/location/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Location;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _location = require("./styles/location");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Location({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Container, restProps, children);
+}
+
+Location.Input = function LocationInput({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Input, restProps);
+};
+
+Location.Button = function LocationButton({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Button, restProps);
+};
+
+Location.Radio = function LocationRadio({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Radio, restProps);
+};
+
+Location.Label = function LocationLabel({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Label, restProps);
+};
+
+Location.Chekcbox = function LocationChekcbox({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Chekcbox, restProps);
+};
+},{"react":"node_modules/react/index.js","./styles/location":"src/component/location/styles/location.js"}],"src/component/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36677,7 +36757,7 @@ Object.defineProperty(exports, "Search", {
 Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function () {
-    return _Header.default;
+    return _header.default;
   }
 });
 Object.defineProperty(exports, "Country", {
@@ -36686,49 +36766,23 @@ Object.defineProperty(exports, "Country", {
     return _country.default;
   }
 });
+Object.defineProperty(exports, "Location", {
+  enumerable: true,
+  get: function () {
+    return _location.default;
+  }
+});
 
 var _search = _interopRequireDefault(require("./search"));
 
-var _Header = _interopRequireDefault(require("./Header"));
+var _header = _interopRequireDefault(require("./header"));
 
 var _country = _interopRequireDefault(require("./country"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./search":"src/component/search/index.js","./Header":"src/component/Header/index.js","./country":"src/component/country/index.js"}],"src/containers/search.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = SearchContainer;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _component = require("../component");
+var _location = _interopRequireDefault(require("./location"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function SearchContainer() {
-  return /*#__PURE__*/_react.default.createElement(_component.Search, null, /*#__PURE__*/_react.default.createElement(_component.Search.Input, null), /*#__PURE__*/_react.default.createElement(_component.Search.Button, null, "search"));
-}
-},{"react":"node_modules/react/index.js","../component":"src/component/index.js"}],"src/pages/search.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Search;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _search = _interopRequireDefault(require("../containers/search"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Search() {
-  return /*#__PURE__*/_react.default.createElement(_search.default, null);
-}
-},{"react":"node_modules/react/index.js","../containers/search":"src/containers/search.js"}],"src/context/dataContext.js":[function(require,module,exports) {
+},{"./search":"src/component/search/index.js","./header":"src/component/header/index.js","./country":"src/component/country/index.js","./location":"src/component/location/index.js"}],"src/context/dataContext.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36751,8 +36805,9 @@ const UseContentProvider = ({
   const [data, setData] = (0, _react.useState)([]);
   const URL = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?`;
 
-  const FetchData = async () => {
-    const res = await fetch(URL);
+  const FetchData = async input => {
+    const API = `${URL}${input}`;
+    const res = await fetch(API);
     const getData = await res.json();
     setData(getData);
     console.log(data);
@@ -36765,7 +36820,8 @@ const UseContentProvider = ({
   return /*#__PURE__*/_react.default.createElement(DataContext.Provider, {
     value: {
       data,
-      setData
+      setData,
+      FetchData
     }
   }, children);
 };
@@ -36789,18 +36845,64 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function CountryContainer() {
-  const {
-    data
-  } = (0, _react.useContext)(_dataContext.DataContext);
-  console.log(data);
-  return /*#__PURE__*/_react.default.createElement(_component.Country, null, data.map(item => {
+function CountryContainer({
+  data,
+  newData
+}) {
+  console.log(newData);
+  return /*#__PURE__*/_react.default.createElement(_component.Country, null, data?.map(item => {
     return /*#__PURE__*/_react.default.createElement(_component.Country.Content, null, /*#__PURE__*/_react.default.createElement(_component.Country.Image, {
       src: item.company_logo
     }), /*#__PURE__*/_react.default.createElement(_component.Country.Detail, null, /*#__PURE__*/_react.default.createElement(_component.Country.Name, null, item.company), /*#__PURE__*/_react.default.createElement(_component.Country.Title, null, item.title), /*#__PURE__*/_react.default.createElement(_component.Country.Button, null, item.type)));
   }));
 }
-},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js"}],"src/containers/header.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js"}],"src/containers/search.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SearchContainer;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _component = require("../component");
+
+var _dataContext = require("../context/dataContext");
+
+var _country = _interopRequireDefault(require("./country"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function SearchContainer() {
+  const {
+    data,
+    setData
+  } = (0, _react.useContext)(_dataContext.DataContext);
+  const [input, setinput] = (0, _react.useState)("");
+  const [isLogging, setIsLogging] = (0, _react.useState)(true);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const filterJob = data?.filter(job => job.title.toLocaleLowerCase().includes(input) || job.company.toLocaleLowerCase().includes(input));
+    console.log(filterJob);
+    return setData(filterJob);
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", /*#__PURE__*/_react.default.createElement(_component.Search, null, isLogging && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_component.Search.Input, {
+    value: input,
+    onChange: e => setinput(e.target.value)
+  }), /*#__PURE__*/_react.default.createElement(_component.Search.Button, {
+    onClick: handleSubmit
+  }, "search"))), /*#__PURE__*/_react.default.createElement(_country.default, {
+    data: data
+  }));
+}
+},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js","./country":"src/containers/country.js"}],"src/containers/header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36821,9 +36923,90 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function HeaderContainer() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_component.Header, null, /*#__PURE__*/_react.default.createElement(_component.Header.Image, {
     src: "../image/backgroundImg.png"
-  }), /*#__PURE__*/_react.default.createElement(_search.default, null)), /*#__PURE__*/_react.default.createElement(_country.default, null));
+  }), /*#__PURE__*/_react.default.createElement(_search.default, null)));
 }
-},{"react":"node_modules/react/index.js","../component":"src/component/index.js","./country":"src/containers/country.js","./search":"src/containers/search.js"}],"src/pages/header.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../component":"src/component/index.js","./country":"src/containers/country.js","./search":"src/containers/search.js"}],"src/containers/Location.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = LocationContainer;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _component = require("../component");
+
+var _dataContext = require("../context/dataContext");
+
+var _country = _interopRequireDefault(require("./country"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function LocationContainer() {
+  const {
+    data,
+    setData
+  } = (0, _react.useContext)(_dataContext.DataContext);
+  const [input, setInput] = (0, _react.useState)("");
+
+  function SearchLocation() {
+    const filterJob = data?.filter(job => job.location.toLocaleLowerCase().includes(input));
+    setData(filterJob);
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_component.Location, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_component.Location.Chekcbox, {
+    type: "checkbox"
+  }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, null, "Full time")), /*#__PURE__*/_react.default.createElement(_component.Location.Input, {
+    value: input,
+    onChange: e => SearchLocation(setInput(e.target.value))
+  }));
+}
+},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js","./country":"src/containers/country.js"}],"src/containers/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "HeaderContainer", {
+  enumerable: true,
+  get: function () {
+    return _header.default;
+  }
+});
+Object.defineProperty(exports, "SearchContainer", {
+  enumerable: true,
+  get: function () {
+    return _search.default;
+  }
+});
+Object.defineProperty(exports, "CountryContainer", {
+  enumerable: true,
+  get: function () {
+    return _country.default;
+  }
+});
+Object.defineProperty(exports, "LocationContainer", {
+  enumerable: true,
+  get: function () {
+    return _Location.default;
+  }
+});
+
+var _header = _interopRequireDefault(require("./header"));
+
+var _search = _interopRequireDefault(require("./search"));
+
+var _country = _interopRequireDefault(require("./country"));
+
+var _Location = _interopRequireDefault(require("./Location"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./header":"src/containers/header.js","./search":"src/containers/search.js","./country":"src/containers/country.js","./Location":"src/containers/Location.js"}],"src/pages/header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36833,18 +37016,31 @@ exports.default = Header;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _component = require("../component");
-
-var _country = _interopRequireDefault(require("../containers/country"));
-
-var _header = _interopRequireDefault(require("../containers/header"));
+var _containers = require("../containers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Header() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null), /*#__PURE__*/_react.default.createElement(_country.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_containers.HeaderContainer, null), /*#__PURE__*/_react.default.createElement(_containers.CountryContainer, null));
 }
-},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../containers/country":"src/containers/country.js","../containers/header":"src/containers/header.js"}],"src/pages/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers":"src/containers/index.js"}],"src/pages/home.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Home;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _containers = require("../containers");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Home() {
+  return /*#__PURE__*/_react.default.createElement(_containers.LocationContainer, null);
+}
+},{"react":"node_modules/react/index.js","../containers":"src/containers/index.js"}],"src/pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36862,13 +37058,21 @@ Object.defineProperty(exports, "Header", {
     return _header.default;
   }
 });
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _home.default;
+  }
+});
 
 var _search = _interopRequireDefault(require("./search"));
 
 var _header = _interopRequireDefault(require("./header"));
 
+var _home = _interopRequireDefault(require("./home"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./search":"src/pages/search.js","./header":"src/pages/header.js"}],"src/app.js":[function(require,module,exports) {
+},{"./search":"src/pages/search.js","./header":"src/pages/header.js","./home":"src/pages/home.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36885,7 +37089,7 @@ var _pages = require("./pages");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_pages.Header, null))));
+  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_pages.Header, null), /*#__PURE__*/_react.default.createElement(_pages.Home, null))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages":"src/pages/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
@@ -36933,7 +37137,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57839" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56984" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

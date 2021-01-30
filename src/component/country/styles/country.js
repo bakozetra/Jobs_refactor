@@ -4,14 +4,13 @@ background-color : lightgray;
 width: 70%;
 margin-left: auto;
 margin-top: 4rem;
-
  `;
+
 export const Title = styled.h2``;
 export const Image = styled.img`
 width: 90px;
 height: 90px;
 margin-left: 1rem;
-
 `;
 
 export const Button = styled.button`
@@ -21,7 +20,6 @@ height: 26px;
 border: 1px solid rgba(51, 70, 128, 1);
 color: rgba(51, 70, 128, 1);
 border-radius : 5px;
-;
 
 `;
 

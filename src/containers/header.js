@@ -8,6 +8,5 @@ export default function HeaderContainer() {
     <Header.Image src="../image/backgroundImg.png"/>
       <SearchContainer />
     </Header>
-    <CountryContainer/>
   </>
 }
