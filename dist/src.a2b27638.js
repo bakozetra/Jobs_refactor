@@ -36950,17 +36950,40 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function LocationContainer() {
   const {
     data,
-    setData
+    setData,
+    FetchData
   } = (0, _react.useContext)(_dataContext.DataContext);
   const [input, setInput] = (0, _react.useState)("");
+  const [checked, setChecked] = (0, _react.useState)(false);
+  console.log(checked);
 
   function SearchLocation() {
     const filterJob = data?.filter(job => job.location.toLocaleLowerCase().includes(input));
     setData(filterJob);
   }
 
-  return /*#__PURE__*/_react.default.createElement(_component.Location, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_component.Location.Chekcbox, {
-    type: "checkbox"
+  function SearchFullTitme() {
+    const filterJob = data?.filter(job => job.type.toLocaleLowerCase() == "full time");
+    setData(filterJob);
+    console.log(filterJob);
+  }
+
+  function allTime() {
+    FetchData();
+  }
+
+  console.log(allTime); // const isChecked = !checked ?
+  //  <Location.Chekcbox  onChange = {() => SearchFullTitme(setChecked(!checked)) } /> 
+  //  :  <Location.Chekcbox />;
+
+  return /*#__PURE__*/_react.default.createElement(_component.Location, null, /*#__PURE__*/_react.default.createElement("div", null, !checked ? /*#__PURE__*/_react.default.createElement(_component.Location.Chekcbox, {
+    type: "checkbox",
+    checked: checked,
+    onChange: () => SearchFullTitme(setChecked(!checked))
+  }) : /*#__PURE__*/_react.default.createElement(_component.Location.Chekcbox, {
+    type: "checkbox",
+    checked: checked,
+    onChange: () => allTime(setChecked(!checked))
   }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, null, "Full time")), /*#__PURE__*/_react.default.createElement(_component.Location.Input, {
     value: input,
     onChange: e => SearchLocation(setInput(e.target.value))
@@ -37137,7 +37160,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56984" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52128" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
