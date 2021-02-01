@@ -36434,29 +36434,49 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Container = _styledComponents.default.form`
+
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: -6rem; 
-    width: 80%;
+    width: 94%;
     margin-left: auto;
-    margin-right: auto;`;
+    margin-right: auto; 
+    background-image : url();
+    @media (min-width : 375px) {
+        width : 80%;
+    }`;
 exports.Container = Container;
 const Input = _styledComponents.default.input`
+background-image: url(../image/baseline_work.png);
+background-repeat : no-repeat;
 background: rgba(255, 255, 255, 1);
-width : 790px;
-height : 55px;
+width: 315px;
+height: 55px;
 outline : none;
 border : none;
+box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+border-radius: 4px;
+@media(min-width : 375px) {
+  width : 790px;
+  height : 55px;
+}
 `;
 exports.Input = Input;
 const Button = _styledComponents.default.button`
 background: rgba(30, 134, 255, 1);
-width : 146px;
-height : 47px;
+width: 104px;
+height: 47px;
 outline : none;
 border : none;
-margin-left: -9.7rem;
+border-radius: 4px;
+position: absolute;
+    right: 1rem;
+@media (min-width : 375px) {
+    width : 146px;
+    margin-left: -9.7rem;
+    position : inherit;
+}
 `;
 exports.Button = Button;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/search/index.js":[function(require,module,exports) {
@@ -36508,8 +36528,14 @@ position : relative;
 `;
 exports.Container = Container;
 const Image = _styledComponents.default.img`
- width: 100%;
-height: 20vh;
+    width: 351px;
+    height: 138px;
+    max-width: 100%;
+    border-radius: 8px;
+@media(min-width: 375px) {
+    width: 100%;
+    height: 20vh;
+}
 `;
 exports.Image = Image;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/header/index.js":[function(require,module,exports) {
@@ -36551,12 +36577,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const Container = _styledComponents.default.div`
 background-color : lightgray;
-width: 70%;
-margin-left: auto;
-margin-top: 4rem;
+margin-top: 17rem;
+@media(min-width : 375px) {
+  width: 70%;
+  margin-left: auto;
+  margin-top: 4rem;
+}
  `;
 exports.Container = Container;
-const Title = _styledComponents.default.h2``;
+const Title = _styledComponents.default.h2`
+    font-size: 16px;`;
 exports.Title = Title;
 const Image = _styledComponents.default.img`
 width: 90px;
@@ -36571,7 +36601,6 @@ height: 26px;
 border: 1px solid rgba(51, 70, 128, 1);
 color: rgba(51, 70, 128, 1);
 border-radius : 5px;
-
 `;
 exports.Button = Button;
 const Name = _styledComponents.default.p``;
@@ -36580,7 +36609,9 @@ const Content = _styledComponents.default.div`
 display : flex ;
 align-items : center;
 background-color : white;
-margin-bottom : 1rem;`;
+margin-bottom : 1rem; 
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+border-radius: 4px;`;
 exports.Content = Content;
 const Detail = _styledComponents.default.div`
 margin-left : 2rem;
@@ -36673,7 +36704,7 @@ Country.About = function CountryAbout({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Chekcbox = exports.Radio = exports.Button = exports.Input = exports.Label = exports.Container = void 0;
+exports.RadioInput = exports.Chekcbox = exports.Radio = exports.Button = exports.Input = exports.Label = exports.Container = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -36689,7 +36720,14 @@ const Container = _styledComponents.default.div`
 exports.Container = Container;
 const Label = _styledComponents.default.label``;
 exports.Label = Label;
-const Input = _styledComponents.default.input``;
+const Input = _styledComponents.default.input`
+    width: 301px;
+    height: 48px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    outline: none;
+    border : none;
+`;
 exports.Input = Input;
 const Button = _styledComponents.default.button``;
 exports.Button = Button;
@@ -36697,6 +36735,8 @@ const Radio = _styledComponents.default.select``;
 exports.Radio = Radio;
 const Chekcbox = _styledComponents.default.input``;
 exports.Chekcbox = Chekcbox;
+const RadioInput = _styledComponents.default.input``;
+exports.RadioInput = RadioInput;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/location/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36741,6 +36781,11 @@ Location.Label = function LocationLabel({ ...restProps
 Location.Chekcbox = function LocationChekcbox({ ...restProps
 }) {
   return /*#__PURE__*/_react.default.createElement(_location.Chekcbox, restProps);
+};
+
+Location.RadioInput = function LocationRadioInput({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.RadioInput, restProps);
 };
 },{"react":"node_modules/react/index.js","./styles/location":"src/component/location/styles/location.js"}],"src/component/index.js":[function(require,module,exports) {
 "use strict";
@@ -36841,22 +36886,33 @@ var _component = require("../component");
 
 var _dataContext = require("../context/dataContext");
 
+var _reactRouterDom = require("react-router-dom");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function CountryContainer({
   data,
-  newData
+  newData,
+  setData
 }) {
+  function filterId(id) {
+    const fitlerIdjob = data?.map(id => id == id);
+    setData(fitlerIdjob);
+    console.log(filterIdjob);
+  }
+
   console.log(newData);
   return /*#__PURE__*/_react.default.createElement(_component.Country, null, data?.map(item => {
-    return /*#__PURE__*/_react.default.createElement(_component.Country.Content, null, /*#__PURE__*/_react.default.createElement(_component.Country.Image, {
+    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: `/:${item.id}`
+    }, /*#__PURE__*/_react.default.createElement(_component.Country.Content, null, /*#__PURE__*/_react.default.createElement(_component.Country.Image, {
       src: item.company_logo
-    }), /*#__PURE__*/_react.default.createElement(_component.Country.Detail, null, /*#__PURE__*/_react.default.createElement(_component.Country.Name, null, item.company), /*#__PURE__*/_react.default.createElement(_component.Country.Title, null, item.title), /*#__PURE__*/_react.default.createElement(_component.Country.Button, null, item.type)));
+    }), /*#__PURE__*/_react.default.createElement(_component.Country.Detail, null, /*#__PURE__*/_react.default.createElement(_component.Country.Name, null, item.company), /*#__PURE__*/_react.default.createElement(_component.Country.Title, null, item.title), /*#__PURE__*/_react.default.createElement(_component.Country.Button, null, item.type))));
   }));
 }
-},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js"}],"src/containers/search.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/containers/search.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36895,12 +36951,14 @@ function SearchContainer() {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", /*#__PURE__*/_react.default.createElement(_component.Search, null, isLogging && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_component.Search.Input, {
     value: input,
+    placeholder: "Title , company , expirt... ",
     onChange: e => setinput(e.target.value)
   }), /*#__PURE__*/_react.default.createElement(_component.Search.Button, {
     onClick: handleSubmit
-  }, "search"))), /*#__PURE__*/_react.default.createElement(_country.default, {
-    data: data
-  }));
+  }, "search"))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_country.default, {
+    data: data,
+    setData: setData
+  })));
 }
 },{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js","./country":"src/containers/country.js"}],"src/containers/header.js":[function(require,module,exports) {
 "use strict";
@@ -36914,8 +36972,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _component = require("../component");
 
-var _country = _interopRequireDefault(require("./country"));
-
 var _search = _interopRequireDefault(require("./search"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -36925,7 +36981,7 @@ function HeaderContainer() {
     src: "../image/backgroundImg.png"
   }), /*#__PURE__*/_react.default.createElement(_search.default, null)));
 }
-},{"react":"node_modules/react/index.js","../component":"src/component/index.js","./country":"src/containers/country.js","./search":"src/containers/search.js"}],"src/containers/Location.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../component":"src/component/index.js","./search":"src/containers/search.js"}],"src/containers/Location.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36972,10 +37028,14 @@ function LocationContainer() {
     FetchData();
   }
 
-  console.log(allTime); // const isChecked = !checked ?
-  //  <Location.Chekcbox  onChange = {() => SearchFullTitme(setChecked(!checked)) } /> 
-  //  :  <Location.Chekcbox />;
+  function ClickRadioButton(e) {
+    console.log(e.target);
+    const filterJob = data?.filter(city => city.location.toLocaleLowerCase() == e.toLocaleLowerCase());
+    console.log(filterJob);
+    setData(filterJob);
+  }
 
+  console.log(allTime);
   return /*#__PURE__*/_react.default.createElement(_component.Location, null, /*#__PURE__*/_react.default.createElement("div", null, !checked ? /*#__PURE__*/_react.default.createElement(_component.Location.Chekcbox, {
     type: "checkbox",
     checked: checked,
@@ -36987,7 +37047,39 @@ function LocationContainer() {
   }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, null, "Full time")), /*#__PURE__*/_react.default.createElement(_component.Location.Input, {
     value: input,
     onChange: e => SearchLocation(setInput(e.target.value))
-  }));
+  }), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_component.Location.RadioInput, {
+    type: "radio",
+    name: "test",
+    id: "london",
+    value: "London",
+    onChange: e => ClickRadioButton(e.target.value)
+  }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, {
+    for: "london"
+  }, "London")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_component.Location.RadioInput, {
+    type: "radio",
+    name: "test",
+    id: "amsterdam",
+    value: "Amsterdam",
+    onChange: e => ClickRadioButton(e.target.value)
+  }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, {
+    for: "amsterdam"
+  }, "Amsterdam")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_component.Location.RadioInput, {
+    type: "radio",
+    name: "test",
+    id: "new-york",
+    value: "New york",
+    onChange: e => ClickRadioButton(e.target.value)
+  }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, {
+    for: "new york"
+  }, "New york")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_component.Location.RadioInput, {
+    type: "radio",
+    name: "test",
+    id: "berlin",
+    value: "Berlin",
+    onChange: e => ClickRadioButton(e.target.value)
+  }), /*#__PURE__*/_react.default.createElement(_component.Location.Label, {
+    for: "berlin"
+  }, "Berlin"))));
 }
 },{"react":"node_modules/react/index.js","../component":"src/component/index.js","../context/dataContext":"src/context/dataContext.js","./country":"src/containers/country.js"}],"src/containers/index.js":[function(require,module,exports) {
 "use strict";
@@ -37044,7 +37136,7 @@ var _containers = require("../containers");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Header() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_containers.HeaderContainer, null), /*#__PURE__*/_react.default.createElement(_containers.CountryContainer, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_containers.HeaderContainer, null));
 }
 },{"react":"node_modules/react/index.js","../containers":"src/containers/index.js"}],"src/pages/home.js":[function(require,module,exports) {
 "use strict";
@@ -37061,9 +37153,41 @@ var _containers = require("../containers");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Home() {
-  return /*#__PURE__*/_react.default.createElement(_containers.LocationContainer, null);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_containers.LocationContainer, null), /*#__PURE__*/_react.default.createElement(_containers.CountryContainer, null));
 }
-},{"react":"node_modules/react/index.js","../containers":"src/containers/index.js"}],"src/pages/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers":"src/containers/index.js"}],"src/pages/description.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Description;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _dataContext = require("../context/dataContext");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function Description() {
+  const {
+    data,
+    setData
+  } = (0, _react.useContext)(_dataContext.DataContext);
+
+  function fiterId(id) {
+    const fitlerIdjob = data?.map(id => id == id);
+    setData(fitlerIdjob);
+    console.log(filterIdjob);
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, data?.map(desc => {
+    return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, desc.title));
+  }));
+}
+},{"react":"node_modules/react/index.js","../context/dataContext":"src/context/dataContext.js"}],"src/pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37087,6 +37211,12 @@ Object.defineProperty(exports, "Home", {
     return _home.default;
   }
 });
+Object.defineProperty(exports, "Description", {
+  enumerable: true,
+  get: function () {
+    return _description.default;
+  }
+});
 
 var _search = _interopRequireDefault(require("./search"));
 
@@ -37094,8 +37224,10 @@ var _header = _interopRequireDefault(require("./header"));
 
 var _home = _interopRequireDefault(require("./home"));
 
+var _description = _interopRequireDefault(require("./description"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./search":"src/pages/search.js","./header":"src/pages/header.js","./home":"src/pages/home.js"}],"src/app.js":[function(require,module,exports) {
+},{"./search":"src/pages/search.js","./header":"src/pages/header.js","./home":"src/pages/home.js","./description":"src/pages/description.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37112,7 +37244,12 @@ var _pages = require("./pages");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_pages.Header, null), /*#__PURE__*/_react.default.createElement(_pages.Home, null))));
+  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/"
+  }, /*#__PURE__*/_react.default.createElement(_pages.Header, null), /*#__PURE__*/_react.default.createElement(_pages.Home, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/:descriptions"
+  }, /*#__PURE__*/_react.default.createElement(_pages.Description, null))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages":"src/pages/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
@@ -37160,7 +37297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52128" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54498" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

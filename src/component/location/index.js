@@ -1,5 +1,5 @@
 import React from "react"
-import {Label , Input , Container , Radio , Button ,Chekcbox} from "./styles/location"
+import {Label , Input , Container , Radio , Button ,Chekcbox , RadioInput} from "./styles/location"
 export default function Location ({children , ...restProps}) {
  return <Container {...restProps}>{children}</Container>
 }
@@ -17,4 +17,7 @@ Location.Label = function LocationLabel({ ...restProps}) {
 }
 Location.Chekcbox = function LocationChekcbox({ ...restProps}) {
    return <Chekcbox {...restProps}/>
+}
+Location.RadioInput = function LocationRadioInput({ ...restProps}) {
+   return <RadioInput {...restProps}/>
 }

@@ -1,5 +1,8 @@
 import React from "react";
-import { LocationContainer } from "../containers";
+import { CountryContainer, LocationContainer } from "../containers";
 export default function Home() {
-  return <LocationContainer/>
+  return <div>
+  <LocationContainer/>
+  <CountryContainer/>
+  </div>
 }

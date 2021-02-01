@@ -1,15 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Header, Home} from "./pages";
+import {Description, Header, Home} from "./pages";
 
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route>
+        <Route  exact path = "/">
        <Header/>
        <Home/>
+        </Route>
+        <Route path ="/:descriptions">
+         <Description/>
         </Route>
       </Switch>
     </Router>

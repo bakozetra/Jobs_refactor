@@ -20,12 +20,15 @@ export default function SearchContainer() {
       <>
         <Search.Input
           value={input}
+           placeholder = "Title , company , expirt... "
           onChange={(e) => setinput(e.target.value)} />
         <Search.Button onClick={handleSubmit}>
           search
        </Search.Button>
       </>}
   </Search>
-    <CountryContainer data={data} />
+  <div>
+    <CountryContainer data={data}  setData={setData}/>
+    </div>
   </>
 }
