@@ -36741,7 +36741,11 @@ const Chekcbox = _styledComponents.default.input``;
 exports.Chekcbox = Chekcbox;
 const RadioInput = _styledComponents.default.input``;
 exports.RadioInput = RadioInput;
-const Image = _styledComponents.default.img``;
+const Image = _styledComponents.default.img`
+width: 18px;
+position: absolute;
+top: 3rem;
+left: 1rem;`;
 exports.Image = Image;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/component/location/index.js":[function(require,module,exports) {
 "use strict";
@@ -36792,6 +36796,11 @@ Location.Chekcbox = function LocationChekcbox({ ...restProps
 Location.RadioInput = function LocationRadioInput({ ...restProps
 }) {
   return /*#__PURE__*/_react.default.createElement(_location.RadioInput, restProps);
+};
+
+Location.Image = function LocationImage({ ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_location.Image, restProps);
 };
 },{"react":"node_modules/react/index.js","./styles/location":"src/component/location/styles/location.js"}],"src/component/descripion/styles/description.js":[function(require,module,exports) {
 "use strict";
@@ -37330,16 +37339,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Home;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _containers = require("../containers");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Home() {
-  const [isLoading, setLoading] = (0, _react.useState)(false);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_containers.LocationContainer, null), /*#__PURE__*/_react.default.createElement(_containers.CountryContainer, null));
 }
 },{"react":"node_modules/react/index.js","../containers":"src/containers/index.js"}],"src/pages/description.js":[function(require,module,exports) {
@@ -37469,7 +37475,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49722" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58527" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
