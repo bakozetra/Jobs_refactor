@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Location } from "../component";
 import { DataContext } from "../context/dataContext";
 import CountryContainer from "./country";
@@ -30,7 +30,12 @@ export default function LocationContainer() {
     setData(filterJob);
   }
 
-  console.log(allTime);
+   useEffect(() => {
+     if(input === "") {
+       FetchData()
+     }
+   } , [])
+
   return <Location>
     <div>
       {
@@ -50,6 +55,7 @@ export default function LocationContainer() {
 
       <Location.Label>Full time</Location.Label>
     </div>
+    <Location.Image src="../image/earth-fill.png"/>
     <Location.Input
       value={input}
       onChange={(e) => SearchLocation(setInput(e.target.value))} />

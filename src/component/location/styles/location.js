@@ -19,3 +19,4 @@ export const  Button = styled.button``;
 export const Radio = styled.select``;
 export const Chekcbox = styled.input ``;
 export const RadioInput = styled.input ``;
+export const Image = styled.img``;

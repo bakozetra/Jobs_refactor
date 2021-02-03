@@ -2,6 +2,9 @@ import styled from "styled-components"
 export const Container = styled.div`
 background-color : lightgray;
 margin-top: 17rem;
+a {
+  text-decoration : none;
+}
 @media(min-width : 375px) {
   width: 70%;
   margin-left: auto;
@@ -34,7 +37,8 @@ align-items : center;
 background-color : white;
 margin-bottom : 1rem; 
 box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-border-radius: 4px;`;
+border-radius: 4px;
+color: #334680;`;
 
 export const Detail = styled.div`
 margin-left : 2rem;
